@@ -1,0 +1,87 @@
+.header {
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.06);
+}
+.header__navigation {
+  display: flex;
+  align-items: center;
+  margin-left: 280px;
+}
+.header__link {
+  line-height: 1.9;
+  margin-right: 80px;
+  border: none;
+  background: none;
+}
+.header__link:first-child {
+  margin-left: 0;
+}
+.header__link.active {
+  font-weight: bold;
+}
+.header__notification {
+  width: 32px;
+  height: 32px;
+  background: no-repeat url("../../assets/icons/layout/bell-black.svg");
+}
+.header__profile a {
+  display: flex;
+  align-items: center;
+  margin-left: 140px;
+}
+.header__profile img {
+  padding: 7px;
+  background: rgba(224, 224, 224, 0.5);
+  border-radius: 50%;
+}
+.header__profile span {
+  margin-left: 12px;
+}
+.header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96px;
+}
+.header .wrapper > .ui__button {
+  margin-left: 144px;
+  padding: 16px 56px;
+}
+
+.footer {
+  margin-top: 160px;
+  box-shadow: 0px -16px 24px rgba(0, 0, 0, 0.06), 0px -2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+}
+.footer__top {
+  max-height: 96px;
+  display: flex;
+}
+.footer__logo img:first-child {
+  margin-right: 10px;
+}
+.footer__navigation {
+  margin-left: 146px;
+  display: flex;
+}
+.footer__link {
+  margin-left: 64px;
+}
+.footer__social-media {
+  margin-left: 196px;
+}
+.footer__social-media-link {
+  margin-left: 40px;
+}
+.footer__bottom {
+  padding: 30px 0;
+  line-height: 24px;
+  font-size: 12px;
+}
+.footer .wrapper {
+  padding-top: 40px;
+}
+
+body.dark .header__notification {
+  background: no-repeat url("../../assets/icons/layout/bell-white.svg");
+}
+
+/*# sourceMappingURL=layout.css.map */

@@ -1,0 +1,116 @@
+.menu
+  padding: 90px 0 56px
+  background:
+    repeat: no-repeat
+    position: center
+    image: url("../../../assets/images/home/menu-bg.jpg")
+    size: cover
+  &__content
+    max-width: 1144px
+    margin: 0 auto
+  &__tabs
+    &-item
+      width: 184px
+      padding: 16px 0
+      text-align: center
+      background: rgba(255, 255, 255, 0.5)
+      border-radius: 16px 16px 0 0
+      &.active
+        background: rgba(255, 255, 255, 0.8)
+  &__body
+    padding: 30px
+    background: rgba(255, 255, 255, 0.8)
+    border-radius: 0 0 16px 16px
+  &__radio
+    display: flex
+    gap: 60px
+    div
+      display: flex
+      gap: 8px
+  &__row
+    display: flex
+    align-items: center
+    gap: 30px
+  &__checkbox
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 16px
+  &__select
+    width: 208px
+    border: none
+    border-radius: 8px
+    background: white url("../../../assets/icons/home/dropdown.svg")
+      repeat: no-repeat
+      position: top 24px right 21px
+    appearance: none
+    padding: 16px 40px 16px 16px
+  &__input
+    width: 524px
+    height: 56px
+    &::placeholder
+      color: #9A9A9A
+    &.destination
+      flex-shrink: 0
+      background: white url("../../../assets/icons/home/geoposition.svg")
+        repeat: no-repeat
+        position: top 18px right 20px
+  &__chart-button
+    flex-shrink: 0
+    width: 56px
+    height: 56px
+    border: 1px solid rgba(255, 255, 255, 0.8)
+    border-radius: 8px
+    background: white url("../../../assets/icons/home/chart.svg")
+      repeat: no-repeat
+      position: center center
+  &__swap-button
+    background: url("../../../assets/icons/home/swap-position.svg")
+      repeat: no-repeat
+      position: center center
+    width: 16px
+    height: 16px
+    margin: 8px 0 8px 488px
+  &__multi-button
+    padding-left: 36px
+    color: #3E7EBD
+    line-height: 24px
+    height: 24px
+    &.plus
+      background: url("../../../assets/icons/home/plus-circle.svg")
+        repeat: no-repeat
+    &.minus
+      background: url("../../../assets/icons/home/minus-circle.svg")
+        repeat: no-repeat
+  &__footer
+    margin-top: 30px
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__filters
+    margin-top: 30px
+    &-button
+      display: flex
+      align-items: center
+      gap: 16px
+      color: #3E7EBD
+  & .ui__button
+    width: 160px
+    height: 56px
+.menu__body.flight-by-route
+  .menu__form
+    margin-top: 30px
+.menu__form.seat-ticket
+  & .menu__slider
+    flex: 1
+.rent-by-time
+  .menu__form
+    display: flex
+    flex-direction: column
+    gap: 30px
+  .menu__select-container
+    max-width: 524px
+    flex: 3
+  .menu__footer,
+  .menu__filters
+    margin-top: 0

@@ -1,0 +1,29 @@
+.menu__select-container {
+  min-height: 56px;
+  flex: 1;
+}
+
+.select {
+  height: 100%;
+  border-radius: 8px;
+  border: none !important;
+}
+.select__multi-value {
+  background: none !important;
+}
+.select__control {
+  height: 100%;
+  border-radius: 8px;
+  border: none !important;
+}
+.select__indicator-separator {
+  display: none;
+}
+.select__dropdown-indicator {
+  padding: 16px !important;
+}
+.select__dropdown-indicator > svg {
+  fill: black;
+}
+
+/*# sourceMappingURL=menu-select.css.map */

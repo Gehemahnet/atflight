@@ -1,0 +1,62 @@
+.rc-slider-track {
+  height: 8px;
+  background: linear-gradient(to right, rgb(143, 138, 210) 50%, rgb(83, 140, 198));
+}
+
+.rc-slider-handle {
+  width: 21px;
+  height: 21px;
+  background: white;
+  border: 5px solid rgb(255, 215, 0);
+  opacity: 1;
+}
+
+.rc-slider-rail {
+  height: 8px;
+}
+
+.menu__slider {
+  position: relative;
+  border-radius: 8px;
+  width: 248px;
+  padding: 16px;
+  background: #FFFFFF;
+  background-image: url("../../../assets/icons/home/dropdown.svg");
+  background-repeat: no-repeat;
+  background-position: top 24px right 24px;
+}
+.menu__slider-modal {
+  position: absolute;
+  top: 72px;
+  right: calc(-50% - 8px);
+  z-index: 2;
+  background: #FFFFFF;
+  padding: 30px;
+  width: 384px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 16px;
+}
+.menu__slider-modal:before {
+  position: absolute;
+  top: -12px;
+  left: calc(50% - 16px);
+  width: 24px;
+  height: 24px;
+  transform: rotate(45deg);
+  content: "";
+  background: white;
+}
+.menu__slider-modal-inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.menu__slider-modal-input {
+  position: relative;
+  width: 140px;
+  background: #F7F7F7;
+}
+
+/*# sourceMappingURL=menu-slider.css.map */

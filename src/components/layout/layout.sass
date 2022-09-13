@@ -1,0 +1,80 @@
+//Header
+.header
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.06)
+  &__navigation
+    display: flex
+    align-items: center
+    margin-left: 280px
+  &__link
+    line-height: 1.9
+    margin-right: 80px
+    border: none
+    background: none
+
+    &:first-child
+      margin-left: 0
+
+    &.active
+      font-weight: bold
+  &__notification
+    width: 32px
+    height: 32px
+    background: no-repeat url("../../assets/icons/layout/bell-black.svg")
+  &__profile
+    a
+      display: flex
+      align-items: center
+      margin-left: 140px
+    img
+      padding: 7px
+      background: rgba(224, 224, 224, 0.5)
+      border-radius: 50%
+    span
+      margin-left: 12px
+
+  & .wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 96px
+    &>.ui__button
+      margin-left: 144px
+      padding: 16px 56px
+//Footer
+.footer
+  margin-top: 160px
+  box-shadow: 0px -16px 24px rgba(0, 0, 0, 0.06), 0px -2px 6px rgba(0, 0, 0, 0.04), 0px -0px 1px rgba(0, 0, 0, 0.04)
+
+  &__top
+    max-height: 96px
+    display: flex
+
+  &__logo
+    img
+      &:first-child
+        margin-right: 10px
+
+  &__navigation
+    margin-left: 146px
+    display: flex
+
+  &__link
+    margin-left: 64px
+
+  &__social-media
+    margin-left: 196px
+
+  &__social-media-link
+    margin-left: 40px
+
+  &__bottom
+    padding: 30px 0
+    line-height: 24px
+    font-size: 12px
+
+  & .wrapper
+    padding-top: 40px
+//Dark theme
+body.dark
+  & .header__notification
+    background: no-repeat url("../../assets/icons/layout/bell-white.svg")

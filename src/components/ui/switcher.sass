@@ -1,0 +1,30 @@
+.switcher
+  display: flex
+  align-items: center
+  line-height: 23px
+  gap: 30px
+  &-button
+    position: relative
+    width: 57px
+    height: 30px
+    padding: 9px
+    border-radius: 100px
+    background: rgba(120, 120, 128, 0.16)
+    display: flex
+    justify-content: space-between
+    align-items: center
+    transition: 0.5s
+    &:before
+      content: ""
+      background: white
+      width: 28px
+      height: 28px
+      border-radius: 50%
+      position: absolute
+      top: 1px
+      left: 1px
+      transition: 0.5s
+    &.on
+      background: rgba(52, 199, 89, 1)
+      &:before
+        transform: translateX(27px)

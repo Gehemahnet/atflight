@@ -1,0 +1,190 @@
+.user {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 496px;
+  background: #FFFFFF;
+  border-radius: 16px;
+}
+.user__agreement {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+  gap: 16px;
+}
+.user__agreement .checkbox-label {
+  margin-top: 6px;
+}
+.user__agreement-text {
+  color: #9A9A9A;
+  line-height: 170%;
+}
+.user__agreement-link {
+  color: #3E7EBD;
+}
+.user__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 30px 30px;
+}
+.user__title {
+  font-size: 2rem;
+  line-height: 2rem;
+  margin: 0 auto;
+}
+.user__subtitle {
+  font-size: 14px;
+  line-height: 14px;
+  color: #AAAAAA;
+  margin-top: 40px;
+  font-weight: 400;
+  font-family: "Noto Sans JP", sans-serif;
+  text-align: center;
+}
+.user__close {
+  position: absolute;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: no-repeat url("../../assets/icons/user/close.svg");
+}
+.user__verification-image {
+  margin: 0 auto;
+}
+.user__verification-text {
+  margin: 20px auto 0;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.user__verification-sent {
+  margin: 8px auto 30px;
+  color: #9A9A9A;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+}
+.user__verification-data {
+  color: #254D9B;
+}
+.user__form {
+  padding: 0 30px;
+}
+.user__form-title {
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #9A9A9A;
+}
+.user__field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+.user__field:first-child {
+  margin-top: 0;
+}
+.user__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+  margin-bottom: 8px;
+}
+.user__input {
+  height: 56px;
+  width: 100%;
+  background: #F7F7F7;
+}
+.user__input::placeholder {
+  color: #9A9A9A;
+}
+.user__input.login {
+  background-repeat: no-repeat;
+  background-image: url("../../assets/icons/user/person.svg");
+  background-position: top 18px right 18px;
+}
+.user__input.password {
+  background-repeat: no-repeat;
+  background-image: url("../../assets/icons/user/eye.svg");
+  background-position: top 22px right 22px;
+}
+.user__google, .user__apple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 54px;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.user__google > img, .user__apple > img {
+  margin-right: 16px;
+}
+.user__apple {
+  background: black;
+  color: #FFFFFF;
+}
+.user__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(224, 224, 224, 0.5);
+}
+.user__footer > .ui__button {
+  padding: 16px 0;
+  width: 204px;
+}
+.user__footer > .ui__button.img {
+  padding: 0;
+  width: 56px;
+  border: none !important;
+}
+.user__footer > .ui__button:first-child {
+  background: none;
+  border: 1px solid #E0E0E0;
+}
+
+body.dark .user {
+  background: rgb(33, 36, 44);
+}
+body.dark .user__agreement-text {
+  color: #9A9A9A;
+}
+body.dark .user__agreement-link {
+  color: #3E7EBD;
+}
+body.dark .user__close {
+  background: no-repeat url("../../assets/icons/user/close-dark.svg");
+}
+body.dark .user__input {
+  background: #2D323D;
+}
+body.dark .user__input.login {
+  background-repeat: no-repeat;
+  background-image: url("../../assets/icons/user/person-dark.svg");
+  background-position: top 18px right 18px;
+}
+body.dark .user__input.password {
+  background-repeat: no-repeat;
+  background-image: url("../../assets/icons/user/eye-dark.svg");
+  background-position: top 22px right 22px;
+}
+body.dark .user__subtitle {
+  color: #AAAAAA;
+}
+body.dark .user__apple {
+  background: none;
+}
+body.dark .user__footer > .ui__button:first-child {
+  color: #FFFFFF;
+}
+
+/*# sourceMappingURL=user.css.map */

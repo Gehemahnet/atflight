@@ -1,0 +1,165 @@
+$input-bg: #F7F7F7
+
+.user
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  display: flex
+  flex-direction: column
+  width: 496px
+  background: #FFFFFF
+  border-radius: 16px
+  &__agreement
+    display: flex
+    align-items: flex-start
+    margin-top: 20px
+    gap: 16px
+    & .checkbox-label
+      margin-top: 6px
+    &-text
+      color: #9A9A9A
+      line-height: 170%
+    &-link
+      color: #3E7EBD
+  &__header
+    position: relative
+    display: flex
+    align-items: center
+    padding: 30px 30px
+  &__title
+    font-size: 2rem
+    line-height: 2rem
+    margin: 0 auto
+  &__subtitle
+    font-size: 14px
+    line-height: 14px
+    color: #AAAAAA
+    margin-top: 40px
+    font-weight: 400
+    font-family: "Noto Sans JP", sans-serif
+    text-align: center
+  &__close
+    position: absolute
+    right: 30px
+    width: 40px
+    height: 40px
+    background: no-repeat url("../../assets/icons/user/close.svg")
+  &__verification
+    &-image
+      margin: 0 auto
+    &-text
+      margin: 20px auto 0
+      font-size: 20px
+      font-weight: 700
+      font-family: "Noto Sans JP", sans-serif
+    &-sent
+      margin: 8px auto 30px
+      color: #9A9A9A
+      text-align: center
+      font-family: "Noto Sans JP", sans-serif
+      font-weight: 400
+    &-data
+      color: #254D9B
+  &__form
+    padding: 0 30px
+    &-title
+      text-align: center
+      font-family: "Noto Sans JP", sans-serif
+      font-weight: 400
+      font-size: 14px
+      line-height: 24px
+      color: #9A9A9A
+  &__field
+    display: flex
+    flex-direction: column
+    margin-top: 16px
+    &:first-child
+      margin-top: 0
+  &__label
+    font-size: .75rem
+    font-weight: 500
+    line-height: 1rem
+    margin-bottom: 8px
+  &__input
+    height: 56px
+    width: 100%
+    background: $input-bg
+    &::placeholder
+      color: #9A9A9A
+    &.login
+      background:
+        repeat: no-repeat
+        image: url("../../assets/icons/user/person.svg")
+        position: top 18px right 18px
+    &.password
+      background:
+        repeat: no-repeat
+        image: url("../../assets/icons/user/eye.svg")
+        position: top 22px right 22px
+  &__google,
+  &__apple
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 54px
+    border: 1px solid #E0E0E0
+    border-radius: 8px
+    margin-top: 20px
+    &>img
+      margin-right: 16px
+  &__apple
+    background: black
+    color: #FFFFFF
+  &__footer
+    display: flex
+    justify-content: space-between
+    padding: 30px
+    margin-top: 40px
+    border-top: 1px solid rgba(224, 224, 224, 0.5)
+    &> .ui__button
+      padding: 16px 0
+      width: 204px
+      &.img
+        padding: 0
+        width: 56px
+        border: none!important
+      &:first-child
+        background: none
+        border: 1px solid #E0E0E0
+
+
+//Dark mode
+body.dark
+  .user
+    background: rgba(33, 36, 44, 1)
+    &__agreement
+      &-text
+        color: #9A9A9A
+      &-link
+        color: #3E7EBD
+    &__close
+      background: no-repeat url("../../assets/icons/user/close-dark.svg")
+    &__input
+      background: #2D323D
+      &.login
+        background:
+          repeat: no-repeat
+          image: url("../../assets/icons/user/person-dark.svg")
+          position: top 18px right 18px
+      &.password
+        background:
+          repeat: no-repeat
+          image: url("../../assets/icons/user/eye-dark.svg")
+          position: top 22px right 22px
+    &__subtitle
+      color: #AAAAAA
+    &__apple
+      background: none
+    &__footer
+      &> .ui__button
+
+          &:first-child
+            color: #FFFFFF
+

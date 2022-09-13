@@ -1,0 +1,29 @@
+.theme-switcher {
+  position: relative;
+  margin-left: 60px;
+  width: 57px;
+  height: 30px;
+  padding: 9px;
+  border-radius: 100px;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+.theme-switcher:before {
+  content: "";
+  background: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  transition: 0.5s;
+}
+.theme-switcher.dark:before {
+  transform: translateX(24px);
+}
+
+/*# sourceMappingURL=theme-switcher.css.map */

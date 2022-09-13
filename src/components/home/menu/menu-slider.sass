@@ -1,0 +1,52 @@
+.rc-slider-track
+  height: 8px
+  background: linear-gradient(to right, rgba(143, 138, 210, 1) 50%, rgba(83, 140, 198, 1))
+
+.rc-slider-handle
+  width: 21px
+  height: 21px
+  background: white
+  border: 5px solid rgba(255, 215, 0, 1)
+  opacity: 1
+.rc-slider-rail
+  height: 8px
+
+.menu
+  &__slider
+    position: relative
+    border-radius: 8px
+    width: 248px
+    padding: 16px
+    background: #FFFFFF
+      image: url("../../../assets/icons/home/dropdown.svg")
+      repeat: no-repeat
+      position: top 24px right 24px
+    &-modal
+      position: absolute
+      top: 72px
+      right: calc(-50% - 8px)
+      z-index: 2
+      background: #FFFFFF
+      padding: 30px
+      width: 384px
+      display: flex
+      flex-direction: column
+      gap: 30px
+      border-radius: 16px
+      &:before
+        position: absolute
+        top: -12px
+        left: calc(50% - 16px)
+        width: 24px
+        height: 24px
+        transform: rotate(45deg)
+        content: ""
+        background: white
+      &-inputs
+        display: flex
+        justify-content: space-between
+        gap: 30px
+      &-input
+        position: relative
+        width: 140px
+        background: #F7F7F7

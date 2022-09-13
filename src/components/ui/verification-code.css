@@ -1,0 +1,17 @@
+.verification__container {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  gap: 16px;
+}
+.verification__cell {
+  width: 40px;
+  height: 56px;
+  background: #F7F7F7;
+}
+
+body.dark .verification__cell {
+  background: #2D323D;
+}
+
+/*# sourceMappingURL=verification-code.css.map */

@@ -1,23 +1,26 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import './index.css';
+import React from "react"
+import ReactDOM from "react-dom/client"
+import {Provider} from "react-redux"
+import {BrowserRouter} from "react-router-dom"
+import {GoogleOAuthProvider} from "@react-oauth/google"
+import App from './components/app/App'
+import store from './redux/store/store'
 
-const container = document.getElementById('root');
-const root = createRoot(container);
+
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+const googleClientId = "945121111258-lo1thrhvubsum7u9ah4m6a4p0amf3g22.apps.googleusercontent.com"
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+        <BrowserRouter>
+            <GoogleOAuthProvider clientId={googleClientId}>
+                <App />
+            </GoogleOAuthProvider>
+        </BrowserRouter>
     </Provider>
   </React.StrictMode>
-);
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

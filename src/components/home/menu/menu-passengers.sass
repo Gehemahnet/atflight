@@ -1,0 +1,81 @@
+.menu
+  &__passengers
+    position: relative
+    border-radius: 8px
+    width: 248px
+    background: #FFFFFF
+      image: url("../../../assets/icons/home/passengers.svg")
+      repeat: no-repeat
+      position: top 20px right 18px
+    padding: 16px
+
+    &-modal
+      position: absolute
+      top: 72px
+      left: 28px
+      z-index: 2
+      background: #FFFFFF
+      padding: 30px
+      width: 384px
+      display: flex
+      flex-direction: column
+      gap: 30px
+      border-radius: 16px
+
+      &:before
+        position: absolute
+        top: -12px
+        left: calc(50% - 12px)
+        width: 24px
+        height: 24px
+        transform: rotate(45deg)
+        content: ""
+        background: white
+
+      &-row
+        display: flex
+        justify-content: space-between
+
+      &-text
+        display: flex
+        justify-content: space-around
+        flex-direction: column
+
+      &-title
+        font-weight: 500
+        font-size: 16px
+        line-height: 24px
+
+      &-subtitle
+        font-weight: 500
+        font-size: 12px
+        line-height: 16px
+        color: #9A9A9A
+
+      &-interface
+        display: flex
+        align-items: center
+        gap: 16px
+
+      &-minus
+        width: 24px
+        height: 24px
+        background: url("../../../assets/icons/home/passengers-minus.svg")
+
+        &:disabled
+          background: url("../../../assets/icons/home/passengers-minus-disabled.svg")
+
+      &-input
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 48px
+        height: 56px
+        background: #F7F7F7
+        border-radius: 8px
+        line-height: 24px
+
+      &-plus
+        width: 24px
+        height: 24px
+        background: url("../../../assets/icons/home/passengers-plus.svg")
