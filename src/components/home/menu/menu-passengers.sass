@@ -1,3 +1,6 @@
+@import "../../app/variables.sass"
+
+
 .menu
   &__passengers
     position: relative
@@ -79,3 +82,8 @@
         width: 24px
         height: 24px
         background: url("../../../assets/icons/home/passengers-plus.svg")
+
+body.dark
+  .menu
+    &__passengers
+      background: $input-bg-dark

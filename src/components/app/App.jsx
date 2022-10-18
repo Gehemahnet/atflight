@@ -1,5 +1,5 @@
 import {Routes, Route} from "react-router-dom"
-import './App.sass'
+import './app.sass'
 import Layout from "../layout/Layout"
 import Home from "../../pages/home/Home"
 

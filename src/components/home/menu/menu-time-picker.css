@@ -20,4 +20,11 @@
   display: none;
 }
 
+body.dark .react-time-picker {
+  background: rgba(224, 224, 224, 0.05);
+}
+body.dark .react-time-picker__inputGroup__input.react-time-picker__inputGroup__amPm option {
+  background: #2D323D;
+}
+
 /*# sourceMappingURL=menu-time-picker.css.map */

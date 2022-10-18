@@ -4,7 +4,7 @@
   &__navigation
     display: flex
     align-items: center
-    margin-left: 280px
+    margin-left: 240px
   &__link
     line-height: 1.9
     margin-right: 80px
@@ -21,15 +21,17 @@
     height: 32px
     background: no-repeat url("../../assets/icons/layout/bell-black.svg")
   &__profile
-    a
-      display: flex
-      align-items: center
-      margin-left: 140px
-    img
-      padding: 7px
-      background: rgba(224, 224, 224, 0.5)
-      border-radius: 50%
-    span
+    display: flex
+    align-items: center
+    margin: 0 auto
+    &-photo
+      &-placeholder
+        padding: 9px
+        width: 40px
+        height: 40px
+        background: rgba(224, 224, 224, 0.5)
+        border-radius: 50%
+    &-name
       margin-left: 12px
 
   & .wrapper
@@ -76,5 +78,10 @@
     padding-top: 40px
 //Dark theme
 body.dark
-  & .header__notification
-    background: no-repeat url("../../assets/icons/layout/bell-white.svg")
+  & .header
+    &__notification
+      background: no-repeat url("../../assets/icons/layout/bell-white.svg")
+    &__profile
+      &-photo
+        &-placeholder
+          background: #9A9A9A

@@ -1,6 +1,6 @@
 import {useState} from "react"
-import {useDispatch, useSelector} from "react-redux"
-import {toggleAuth} from "../../redux/slices/authSlice"
+import {useDispatch} from "react-redux"
+import {setLogin} from "../../redux/slices/userSlice"
 import {setMode} from "../../redux/slices/authPopupSlice"
 import {emailRegExp, phoneRegExp} from "../../data/regExp"
 import {useGoogleLogin} from "@react-oauth/google"
@@ -11,7 +11,6 @@ import Button from "../ui/Button"
 
 const Login = ({closePopup}) => {
     const dispatch = useDispatch()
-    const {isAuth} = useSelector(state => state.isAuth)
     const [form, setForm] = useState({
         login: "",
         password: ""
@@ -21,9 +20,9 @@ const Login = ({closePopup}) => {
     }
     const login = () => {
         if (emailRegExp.test(form.login) || phoneRegExp.test(form.login)) {
-            dispatch(toggleAuth(isAuth))
-            localStorage.setItem('isAuth', isAuth)
+            dispatch(setLogin(form.login))
             closePopup()
+            localStorage.setItem('userLogin', form.login)
         } else {
             alert("Email or Phone number is incorrect.")
         }

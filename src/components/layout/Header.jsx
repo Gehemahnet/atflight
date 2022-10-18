@@ -1,16 +1,24 @@
 import {NavLink} from "react-router-dom"
 import {useDispatch, useSelector} from "react-redux"
 import {toggleAuthPopup} from "../../redux/slices/authPopupSlice"
+// import {setLogin} from "../../redux/slices/userSlice"
 import {LINKS} from "../../data/links"
 import logo from '../../assets/icons/layout/logo.svg'
 import ThemeSwitcher from "../ui/ThemeSwitcher"
 import Button from "../ui/Button"
 import User from "../auth/User"
+import HeaderProfile from "./HeaderProfile"
+
 
 const Header = () => {
-    const {isAuth} = useSelector(state => state.isAuth)
+    const {userLogin} = useSelector(state => state.user)
     const {isOpen} = useSelector(state => state.authPopup)
     const dispatch = useDispatch()
+    // const logout = () => {
+    //     dispatch(setLogin(false))
+    //     localStorage.setItem('userLogin', "false")
+    //     dispatch(toggleAuthPopup(isOpen))
+    // }
     return (
         <header className="header">
             <div className="wrapper">
@@ -23,7 +31,10 @@ const Header = () => {
                         <span className="header__notification-counter"></span>
                     </button>
                 </div>
-                {isAuth ? <></> : <Button onClick={() => dispatch(toggleAuthPopup(isOpen))} text="Login"/>}
+                {userLogin !== false
+                    ? <HeaderProfile/>
+                    : <Button onClick={() => dispatch(toggleAuthPopup(isOpen))} text="Login"/>
+                }
                 <ThemeSwitcher/>
                 {isOpen && <User/>}
             </div>

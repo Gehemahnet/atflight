@@ -1,7 +1,7 @@
 import {useState} from "react"
 import MenuDestination from "./MenuDestination"
 import Checkbox from "../../ui/Checkbox"
-import {TYPES} from "../../../data/types"
+import {TYPESTOSELECT} from "../../../data/menuSelectData"
 import MenuSelect from "./MenuSelect"
 import MenuSingleDate from "./MenuSingleDate"
 import MenuFooter from "./MenuFooter"
@@ -32,9 +32,6 @@ const MenuRentByTime = () => {
     const [passengers, setPassengers] = useState([0,0,0,0])
     const [distance, setDistance] = useState([100, 10000])
     const [speed, setSpeed] = useState([150, 1500])
-    let types = []
-    TYPES.map(item => types.push({value: item.name.toLowerCase(), label: item.name}))
-
     return (
         <div className="menu__body rent-by-time">
             <form className="menu__form">
@@ -57,10 +54,9 @@ const MenuRentByTime = () => {
                 <div className="menu__row">
                     <MenuSelect
                         placeholder="Plane Type"
-                        options={types}
+                        options={TYPESTOSELECT}
                         value={type}
                         setValue={setType}
-                        isMulti={true}
                     />
                     <MenuSingleDate
                         placeholder="Start Date & Time"

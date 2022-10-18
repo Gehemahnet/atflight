@@ -8,6 +8,7 @@
   width: 496px;
   background: #FFFFFF;
   border-radius: 16px;
+  margin-top: 15vh;
 }
 .user__agreement {
   display: flex;

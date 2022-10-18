@@ -58,5 +58,13 @@
   width: 140px;
   background: #F7F7F7;
 }
+.menu__slider-modal-input-container {
+  position: relative;
+}
+.menu__slider-modal-input-container span {
+  top: 1em;
+  right: 1em;
+  position: absolute;
+}
 
 /*# sourceMappingURL=menu-slider.css.map */

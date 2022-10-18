@@ -23,13 +23,13 @@ const MenuSlider = ({placeholder, category, range, value, setValue}) => {
     }
     return (
         <div className="menu__slider" onClick={toggleShow}>
-            {placeholder}: {dirty ? `${value[0]} - ${value[1]}${category}` : "From - To"}
+            {!dirty ? `${placeholder}:` : `${value[0]} - ${value[1]}  ${category}`}
             {show &&
                 <>
                     <div className="popup"></div>
                     <div className="menu__slider-modal" onClick={e => e.stopPropagation()}>
                         <span className="menu__slider-modal-title">
-                            {placeholder}: {dirty ? `${value[0]} - ${value[1]}${category}` : "From - To"}
+                            {placeholder}:<br/> {value[0]} - {value[1]} {category}
                         </span>
                         <Slider
                             range
@@ -42,16 +42,25 @@ const MenuSlider = ({placeholder, category, range, value, setValue}) => {
                             }}
                         />
                         <div className="menu__slider-modal-inputs">
-                            <input className="menu__slider-modal-input dollars"
-                                   value={value[0]}
-                                   onChange={e => valueHandler(e, 0)}
-                                   onKeyUp={e => e.target.value.replace(onlyDigits,'')}
-                                   type="text"/>
-                            <input className="menu__slider-modal-input dollars"
-                                   value={value[1]}
-                                   onChange={e => valueHandler(e, 1)}
-                                   onKeyUp={e => e.target.value.replace(onlyDigits,'')}
-                                   type="text"/>
+                            <div className="menu__slider-modal-input-container">
+                                <input className="menu__slider-modal-input"
+                                       value={value[0]}
+                                       onChange={e => valueHandler(e, 0)}
+                                       onKeyUp={e => e.target.value.replace(onlyDigits, '')}
+                                       type="text"
+                                />
+                                <span>{category}</span>
+                            </div>
+                            <div className="menu__slider-modal-input-container">
+                                <input className="menu__slider-modal-input"
+                                       value={value[1]}
+                                       onChange={e => valueHandler(e, 1)}
+                                       onKeyUp={e => e.target.value.replace(onlyDigits, '')}
+                                       type="text"
+                                />
+                                <span>{category}</span>
+                            </div>
+
                         </div>
                     </div>
                 </>

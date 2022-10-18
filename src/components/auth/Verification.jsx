@@ -6,17 +6,14 @@ import backDark from "../../assets/icons/user/back-dark.svg"
 import VerificationCode from "../ui/VerificationCode"
 import Button from "../ui/Button"
 import {setMode} from "../../redux/slices/authPopupSlice"
-import {toggleAuth} from "../../redux/slices/authSlice"
 
 const Verification = ({closePopup}) => {
     const {mode, data, verificationCode} = useSelector(state => state.authPopup)
-    const {isAuth} = useSelector(state => state.isAuth)
     const dispatch = useDispatch()
     const backToRegistration = () => {
         dispatch(setMode("registration"))
     }
     const verify = () => {
-        dispatch(toggleAuth(isAuth))
         closePopup()
         dispatch(setMode("login"))
     }

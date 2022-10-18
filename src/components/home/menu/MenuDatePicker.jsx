@@ -2,7 +2,7 @@ import {useState} from "react"
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import Button from "../../ui/Button";
-import {NextButton, PrevButton} from "./MenuDatePickerButtons"
+import {NextButton, NextButtonDark, PrevButton, PrevButtonDark} from "./MenuDatePickerButtons"
 
 
 const MenuDatePicker = ({value, setValue}) => {
@@ -32,12 +32,12 @@ const MenuDatePicker = ({value, setValue}) => {
                             selectRange
                             minDate={new Date()}
                             onChange={setValue}
-                            nextLabel={<NextButton/>}
-                            prevLabel={<PrevButton/>}
+                            nextLabel={document.body.classList.contains("dark")?<NextButtonDark/> : <NextButton/>}
+                            prevLabel={document.body.classList.contains("dark")?<PrevButtonDark/> : <PrevButton/>}
                         />
                         <div className="menu__datepicker-modal-check">
                             <span>Rent Dates</span>
-                            <span>
+                            <span className="menu__datepicker-modal-check-dates">
                                 {`${value[0].toLocaleString(navigator.language, options)} 
                             - ${value[1].toLocaleString(navigator.language, options)}`}
                             </span>

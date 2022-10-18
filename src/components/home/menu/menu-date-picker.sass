@@ -1,3 +1,5 @@
+@import "../../app/variables.sass"
+
 .menu__datepicker
   position: relative
   flex: 1
@@ -100,8 +102,7 @@
   flex: none !important
 .react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--neighboringMonth
   cursor: default !important
-  color: #FFFFFF !important
-  background: #FFFFFF !important
+  opacity: 0
 .react-calendar__tile:disabled
   background: none !important
   color: #9A9A9A !important
@@ -148,3 +149,28 @@
 
 .rent-by-time .react-calendar__tile.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__month-view__days__day
   border-radius: 50% !important
+
+body.dark
+  .react-calendar
+    background: $input-bg-dark
+
+  .react-calendar__tile.react-calendar__month-view__days__day
+    abbr
+      color: #9A9A9A
+  .react-calendar__tile--now
+    abbr
+      color: #FFFFFF !important
+  .react-calendar__tile.react-calendar__tile--active.react-calendar__tile--range.react-calendar__month-view__days__day
+    abbr
+      color: #FFFFFF !important
+  .react-calendar__month-view__weekdays__weekday
+    abbr
+      color: #9A9A9A
+
+  .menu__datepicker
+    &-modal
+      &-reset
+        color: #3E7EBD
+      &-check
+        &-dates
+          color: #908BCE

@@ -1,6 +1,6 @@
 import {useState} from "react"
 import Calendar from "react-calendar"
-import {NextButton, PrevButton} from "./MenuDatePickerButtons"
+import {NextButton, NextButtonDark, PrevButton, PrevButtonDark} from "./MenuDatePickerButtons"
 import Button from "../../ui/Button"
 import TimePicker from "react-time-picker"
 import "./menu-time-picker.sass"
@@ -9,7 +9,9 @@ const MenuSingleDate = ({placeholder, additionalClass, value, setValue, time, se
     const [show, setShow] = useState(false)
     const [confirmed, setConfirmed] = useState(false)
     const reset = () => {
-        setValue([new Date(), new Date()])
+        setShow(false)
+        setValue([new Date()])
+        setTime("10:00")
     }
     const confirm = () => {
         setConfirmed(true)
@@ -31,8 +33,8 @@ const MenuSingleDate = ({placeholder, additionalClass, value, setValue, time, se
                             showDoubleView
                             minDate={new Date()}
                             onChange={setValue}
-                            nextLabel={<NextButton/>}
-                            prevLabel={<PrevButton/>}
+                            nextLabel={document.body.classList.contains("dark")?<NextButtonDark/> : <NextButton/>}
+                            prevLabel={document.body.classList.contains("dark")?<PrevButtonDark/> : <PrevButton/>}
                         />
                         <div className="menu__datepicker-modal-check">
                             <div className="menu__datepicker-modal-time">
