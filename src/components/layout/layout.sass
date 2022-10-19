@@ -4,7 +4,6 @@
   &__navigation
     display: flex
     align-items: center
-    margin-left: 240px
   &__link
     line-height: 1.9
     margin-right: 80px
@@ -23,7 +22,12 @@
   &__profile
     display: flex
     align-items: center
-    margin: 0 auto
+    position: relative
+    &-button
+      margin-left: 16px
+      width: 24px
+      height: 24px
+      background: no-repeat url("../../assets/icons/layout/dropdown.svg") center
     &-photo
       &-placeholder
         padding: 9px
@@ -33,6 +37,51 @@
         border-radius: 50%
     &-name
       margin-left: 12px
+    &-popup
+      position: absolute
+      z-index: 3
+      top: calc(100% + 24px)
+      right: -148px
+      min-width: 320px
+      border-radius: 16px
+      background: #FFFFFF
+      &:before
+        position: absolute
+        top: -12px
+        left: calc(50% - 12px)
+        content: ""
+        width: 24px
+        height: 24px
+        background: white
+        transform: rotate(45deg)
+      &-block
+        display: flex
+        flex-direction: column
+        border-bottom: 1px solid rgba(224, 224, 224, 0.5)
+      &-link
+        display: flex
+        align-items: center
+        padding: 16px
+        &>span
+          margin-left: 24px
+      &-footer
+        display: flex
+        justify-content: space-between
+        padding: 16px
+        &>button
+          &:first-child
+            background: #FFFFFF
+            border: 1px solid #000000
+            width: 208px
+            height: 56px
+          &:last-child
+            width: 56px
+            height: 56px
+            display: flex
+            justify-content: center
+            align-items: center
+            background: white
+
 
   & .wrapper
     display: flex
@@ -79,9 +128,11 @@
 //Dark theme
 body.dark
   & .header
-    &__notification
-      background: no-repeat url("../../assets/icons/layout/bell-white.svg")
-    &__profile
-      &-photo
-        &-placeholder
-          background: #9A9A9A
+      &__notification
+        background: no-repeat url("../../assets/icons/layout/bell-white.svg")
+      &__profile
+        &-button
+          background: no-repeat url("../../assets/icons/layout/dropdown-dark.svg")
+        &-photo
+          &-placeholder
+            background: #9A9A9A

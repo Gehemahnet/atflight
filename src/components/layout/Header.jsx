@@ -1,7 +1,6 @@
 import {NavLink} from "react-router-dom"
 import {useDispatch, useSelector} from "react-redux"
 import {toggleAuthPopup} from "../../redux/slices/authPopupSlice"
-// import {setLogin} from "../../redux/slices/userSlice"
 import {LINKS} from "../../data/links"
 import logo from '../../assets/icons/layout/logo.svg'
 import ThemeSwitcher from "../ui/ThemeSwitcher"
@@ -14,11 +13,6 @@ const Header = () => {
     const {userLogin} = useSelector(state => state.user)
     const {isOpen} = useSelector(state => state.authPopup)
     const dispatch = useDispatch()
-    // const logout = () => {
-    //     dispatch(setLogin(false))
-    //     localStorage.setItem('userLogin', "false")
-    //     dispatch(toggleAuthPopup(isOpen))
-    // }
     return (
         <header className="header">
             <div className="wrapper">
