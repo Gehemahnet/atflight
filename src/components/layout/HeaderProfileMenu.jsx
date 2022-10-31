@@ -1,6 +1,4 @@
 import {Link} from "react-router-dom"
-import {useDispatch} from "react-redux"
-import {setLogin} from "../../redux/slices/userSlice"
 import Profile from "../../assets/icons/layout/profile.svg"
 import Aircraft from "../../assets/icons/layout/aircraft.svg"
 import Payments from "../../assets/icons/layout/payments.svg"
@@ -12,38 +10,36 @@ import Button from "../ui/Button"
 
 
 const HeaderProfileMenu = ({toggleUserPopup}) => {
-    const dispatch = useDispatch()
     const logout = () => {
-        dispatch(setLogin(false))
-        localStorage.setItem('userLogin', "false")
-        toggleUserPopup()
+        localStorage.removeItem("user")
+        window.location.reload()
     }
     return (
         <>
-            <div className="overlay"></div>
+            <div className="overlay" onClick={toggleUserPopup}></div>
             <div className="header__profile-popup" onClick={e => e.stopPropagation()}>
                 <div className="header__profile-popup-block">
-                    <Link to="/profile" className="header__profile-popup-link">
+                    <Link to="settings" className="header__profile-popup-link">
                         <img src={Profile} alt=""/>
                         <span>My Profile</span>
                     </Link>
                 </div>
                 <div className="header__profile-popup-block">
-                    <Link to="/profile/aircraft" className="header__profile-popup-link">
+                    <Link to="settings/aircraft" className="header__profile-popup-link">
                         <img src={Aircraft} alt=""/>
                         <span>My aircrafts</span>
                     </Link>
-                    <Link to="/profile/payments" className="header__profile-popup-link">
+                    <Link to="settings/payments" className="header__profile-popup-link">
                         <img src={Payments} alt=""/>
                         <span>Payments & Payouts</span>
                     </Link>
                 </div>
                 <div className="header__profile-popup-block">
-                    <Link to="/help" className="header__profile-popup-link">
+                    <Link to="help" className="header__profile-popup-link">
                         <img src={Help} alt=""/>
                         <span>Help & Feedback</span>
                     </Link>
-                    <Link to="/terms" className="header__profile-popup-link">
+                    <Link to="terms" className="header__profile-popup-link">
                         <img src={Terms} alt=""/>
                         <span>Terms of Service</span>
                     </Link>

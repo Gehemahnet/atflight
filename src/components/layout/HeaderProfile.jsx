@@ -5,25 +5,25 @@ import HeaderProfileMenu from "./HeaderProfileMenu";
 
 
 const HeaderProfile = () => {
-    const {userName, userLogin, photo} = useSelector(state => state.user)
-    const [userPopup, setUserPopup] = useState(true)
+    const user = useSelector(state => state.user)
+    const [userPopup, setUserPopup] = useState(false)
     const toggleUserPopup = () => {
         setUserPopup(!userPopup)
     }
     return (
-        <div className="header__profile" onClick={toggleUserPopup}>
+        <div className="header__profile">
                 <img
-                    src={photo === false ? Person : photo}
-                    alt="userPhoto"
-                    className={photo === false ? "header__profile-photo-placeholder" : "header__profile-photo"}
+                    src={user.photo === null ? Person : user.photo}
+                    alt=""
+                    className={user.photo === null ? "header__profile-photo-placeholder" : "header__profile-photo"}
                 />
                 <span className="header__profile-name">
-                    {userName !== false
-                        ? userName
-                        : userLogin
+                    {user.name !== null
+                        ? user.name
+                        : user.email || user.phone
                     }
                 </span>
-                <button className="header__profile-button"/>
+                <button className="header__profile-button" onClick={toggleUserPopup}/>
             {userPopup === true &&
                 <HeaderProfileMenu
                     toggleUserPopup={toggleUserPopup}

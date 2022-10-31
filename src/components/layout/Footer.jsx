@@ -1,10 +1,12 @@
 import {NavLink} from "react-router-dom"
 import logo from '../../assets/icons/layout/logo.svg'
-import {SOCIAL, LINKS} from "../../data/links"
+import {SOCIAL} from "../../data/links"
+import {useSelector} from "react-redux"
 
 const Footer = () => {
-
+    const user = useSelector(state => state.user)
     return (
+
         <footer className="footer">
             <div className="wrapper">
                 <div className="footer__top">
@@ -14,9 +16,12 @@ const Footer = () => {
                         alt=""
                     />
                     <div className="footer__navigation">
-                        {LINKS.map(link =>
-                            <NavLink key={link.text} to={link.to} className="footer__link">{link.text}</NavLink>
-                        )}
+                        <NavLink to="" className="footer__link">Home</NavLink>
+                        <NavLink to="blog" className="footer__link">Blog</NavLink>
+                        <NavLink to="adds" className="footer__link">Add's</NavLink>
+                        {(user.phone !== null || user.email !== null) &&
+                            <NavLink to="settings" className="footer__link">Settings</NavLink>
+                        }
                     </div>
                     <div className="footer__social-media">
                         {SOCIAL.map(link =>

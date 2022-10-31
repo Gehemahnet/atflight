@@ -1,22 +1,91 @@
 import {createSlice} from "@reduxjs/toolkit"
 
-const initialState = {
-    userLogin: localStorage.getItem('userLogin') || false,
-    userName: localStorage.getItem('userName') || false,
-    photo: JSON.parse(localStorage.getItem('photo')) || false,
+function getState() {
+    if (localStorage.getItem("user") !== null) {
+        return {
+            phone: JSON.parse(localStorage.getItem('user')).phone || null,
+            email: JSON.parse(localStorage.getItem('user')).email || null,
+            name: JSON.parse(localStorage.getItem('user')).name || null,
+            emergencyContact: JSON.parse(localStorage.getItem('user')).emergencyContact || null,
+            id: JSON.parse(localStorage.getItem('user')).id || null,
+            dob: JSON.parse(localStorage.getItem('user')).dob || null,
+            license: JSON.parse(localStorage.getItem('user')).license || null,
+            governmentId: JSON.parse(localStorage.getItem('user')).governmentId || null,
+            roles: JSON.parse(localStorage.getItem('user')).roles || null,
+            salary: JSON.parse(localStorage.getItem('user')).salary || null,
+            photo: JSON.parse(localStorage.getItem('user')).photo || null,
+        }
+    } else {
+        return {
+            phone: null,
+            email: null,
+            emergencyContact: null,
+            name: null,
+            id: null,
+            dob: null,
+            license: null,
+            governmentId: null,
+            roles: null,
+            salary: null,
+            photo: null
+        }
+    }
+
 }
 
+const initialState = getState()
+
 export const userSlice = createSlice({
-    name: 'auth',
+    name: 'user',
     initialState,
     reducers: {
-        setLogin(state, action) {
-            state.userLogin = action.payload
+        setPhone(state, action) {
+            state.phone = action.payload
+        },
+        setEmail(state, action) {
+            state.email = action.payload
+        },
+        setName(state, action) {
+            state.name = action.payload
+        },
+        setEmergencyContact(state, action) {
+            state.emergencyContact = action.payload
+        },
+        setId(state, action) {
+            state.id = action.payload
+        },
+        setDob(state, action) {
+            state.dob = action.payload
+        },
+        setLicense(state, action) {
+            state.license = action.payload
+        },
+        setGovernmentId(state, action) {
+            state.governmentId = action.payload
+        },
+        setRoles(state, action) {
+            state.roles = action.payload
         },
         setPhoto(state, action) {
             state.photo = action.payload
-        }
-    },
+        },
+        setSalary(state, action) {
+            state.salary = action.payload
+        },
+    }
 })
-export const {setLogin, photo} = userSlice.actions
+export const {
+    setPhone,
+    setEmail,
+    setName,
+    setEmergencyContact,
+    setId,
+    setDob,
+    setLicense,
+    setGovernmentId,
+    setSalary,
+    setRoles,
+    setPhoto,
+
+} = userSlice.actions
 export default userSlice.reducer

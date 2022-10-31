@@ -7,7 +7,4 @@ const SOCIAL = [
     {href: "https://www.pinterest.com/", img: require('../assets/icons/layout/pinterest.svg')},
     {href: "https://www.linkedin.com/", img: require('../assets/icons/layout/linkedin.svg')},
 ]
-const LINKS = [
-    {to: "", text: "Home"}, {to: "blog", text: "Blog"}, {to: "adds", text: "Add's"}, {to: "settings", text: "Settings"}
-]
-export {SOCIAL, LINKS}
+export {SOCIAL}
