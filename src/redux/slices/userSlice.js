@@ -5,7 +5,8 @@ function getState() {
         return {
             phone: JSON.parse(localStorage.getItem('user')).phone || null,
             email: JSON.parse(localStorage.getItem('user')).email || null,
-            name: JSON.parse(localStorage.getItem('user')).name || null,
+            firstName: JSON.parse(localStorage.getItem('user')).firstName || null,
+            lastName: JSON.parse(localStorage.getItem('user')).lastName || null,
             emergencyContact: JSON.parse(localStorage.getItem('user')).emergencyContact || null,
             id: JSON.parse(localStorage.getItem('user')).id || null,
             dob: JSON.parse(localStorage.getItem('user')).dob || null,
@@ -14,20 +15,23 @@ function getState() {
             roles: JSON.parse(localStorage.getItem('user')).roles || null,
             salary: JSON.parse(localStorage.getItem('user')).salary || null,
             photo: JSON.parse(localStorage.getItem('user')).photo || null,
+            languages: JSON.parse(localStorage.getItem('user')).languages || null,
         }
     } else {
         return {
             phone: null,
             email: null,
             emergencyContact: null,
-            name: null,
+            firstName: null,
+            lastName: null,
             id: null,
             dob: null,
             license: null,
             governmentId: null,
             roles: null,
             salary: null,
-            photo: null
+            photo: null,
+            languages: null
         }
     }
 
@@ -39,6 +43,7 @@ export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
+        set:(state,action) => action.payload,
         setPhone(state, action) {
             state.phone = action.payload
         },
@@ -75,6 +80,7 @@ export const userSlice = createSlice({
     }
 })
 export const {
+    set,
     setPhone,
     setEmail,
     setName,

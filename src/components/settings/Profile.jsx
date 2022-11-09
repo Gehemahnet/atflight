@@ -16,9 +16,16 @@ const Profile = () => {
     const user = useSelector(state => state.user)
     const {editProfile} = useSelector(state => state.profile)
     const dispatch = useDispatch()
+
+    const name = user.firstName + " " + user.lastName
     const toggleEdit = () => {
         dispatch(toggleEditor(editProfile))
     }
+    const logout = () => {
+        localStorage.removeItem("user")
+        window.location.reload()
+    }
+
     return (
         <div className="profile">
             {editProfile === true && <ProfileEditor/>}
@@ -29,10 +36,14 @@ const Profile = () => {
                 </div>
                 <div className="profile__header-info">
                     <h4 className="profile__header-name">
-                        {user.name !== null ? user.name : user.email || user.phone}
+                        {(user.name !== null && user.name !== "")
+                            ? name
+                            : user.email || user.phone}
                     </h4>
                     <h5 className="profile__header-id">ID {user.id !== null && user.id}</h5>
-                    <h6 className="profile__header-roles">{user.roles !== null && user.roles.map(role => <span>{role}</span>)}</h6>
+                    <h6 className="profile__header-roles">{(user.roles !== null && user.roles !== undefined)
+                        && user.roles.map(role =>
+                        <span>{role}</span>)}</h6>
                 </div>
             </div>
             <div className="profile__main">
@@ -43,7 +54,7 @@ const Profile = () => {
                 />
                 <ProfileField
                     img={phone}
-                    data={user.phone}
+                    data={user.phoneNumber}
                     description={"My phone"}
                 />
                 <ProfileField
@@ -83,6 +94,7 @@ const Profile = () => {
                 />
                 <Button
                     img={exit}
+                    onClick={logout}
                 />
             </div>
         </div>
