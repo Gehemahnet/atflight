@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react"
 import {useDispatch} from "react-redux"
-import {setMode, verify} from "../../redux/slices/authPopupSlice"
+import {setMode, verify} from "../../redux/slices/modal/authPopupSlice"
 import {Link} from "react-router-dom"
 import {useGoogleLogin} from "@react-oauth/google"
 import {emailRegExp, phoneRegExp, password} from "../../data/regExp"

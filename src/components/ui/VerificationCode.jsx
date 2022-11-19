@@ -1,6 +1,6 @@
 import {useState} from "react"
 import {useDispatch} from "react-redux"
-import {setVerificationCode} from "../../redux/slices/authPopupSlice"
+import {setVerificationCode} from "../../redux/slices/modal/authPopupSlice"
 import {onlyDigits} from "../../data/regExp"
 import "./verification-code.sass"
 

@@ -1,0 +1,113 @@
+.settings {
+  padding-top: 40px;
+  overflow: auto;
+}
+.settings .wrapper {
+  display: flex;
+  gap: 32px;
+}
+.settings__aside {
+  width: 320px;
+}
+.settings__aside-block {
+  margin-top: 30px;
+}
+.settings__aside-block-button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 24px 20px;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.settings__aside-block-button.active {
+  position: relative;
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
+}
+.settings__aside-block-button.active:after {
+  position: absolute;
+  top: 13px;
+  right: 0;
+  content: "";
+  background: black;
+  width: 4px;
+  height: 48px;
+  border-radius: 8px 0 0 8px;
+}
+.settings__aside-block-payments {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+  border: 1px solid rgba(224, 224, 224, 0.5);
+  border-radius: 8px;
+}
+.settings__aside-block-cards {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 30px;
+}
+.settings__aside-block-card {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.settings__aside-block-card > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.settings__aside-block-card > span:first-child {
+  gap: 16px;
+}
+.settings__aside-block-history {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  border-top: 1px solid rgba(224, 224, 224, 0.5);
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+}
+.settings__aside-block-other {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 36px;
+  width: 100%;
+}
+.settings__aside-block-help {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 20px;
+  border: 1px solid rgba(224, 224, 224, 0.5);
+  border-radius: 8px;
+  padding: 20px;
+}
+.settings__aside-payments-button, .settings__aside-help-button {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+body.dark .settings__aside-block-button {
+  border: 1px solid rgba(224, 224, 224, 0.1);
+}
+body.dark .settings__aside-block-button.active:after {
+  background: #9A9A9A;
+}
+body.dark .settings__aside-block-help, body.dark .settings__aside-block-payments {
+  border: 1px solid rgba(224, 224, 224, 0.1);
+}
+body.dark .settings__aside-block-history {
+  border-color: rgba(224, 224, 224, 0.1);
+}
+
+/*# sourceMappingURL=settings.css.map */

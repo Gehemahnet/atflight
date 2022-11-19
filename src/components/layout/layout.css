@@ -106,7 +106,6 @@
 }
 
 .footer {
-  margin-top: 160px;
   box-shadow: 0px -16px 24px rgba(0, 0, 0, 0.06), 0px -2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
 }
 .footer__top {
@@ -142,7 +141,7 @@ body.dark .header__notification {
   background: no-repeat url("../../assets/icons/layout/bell-white.svg");
 }
 body.dark .header__profile-button {
-  background: no-repeat url("../../assets/icons/layout/dropdown-dark.svg");
+  background: no-repeat url("../../assets/icons/layout/dropdown-dark.svg") center;
 }
 body.dark .header__profile-photo-placeholder {
   background: #9A9A9A;

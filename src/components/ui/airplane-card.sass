@@ -1,0 +1,52 @@
+.airplane-card
+  width: 320px
+  padding: 20px
+  border: 1px solid rgba(224, 224, 224, 0.5)
+  border-radius: 8px
+  &__cover
+    width: 280px
+    height: 160px
+    position: relative
+  &__image
+    width: 280px
+    height: 160px
+    border-radius: 8px
+  &__price
+    position: absolute
+    right: 0
+    bottom: 0
+    width: 70px
+    height: 28px
+    text-align: center
+    background: linear-gradient(180deg, #4551A8 0%, #3E88C5 100%)
+    color: white
+    border-top: 1px solid #fff
+    border-left: 1px solid #fff
+    border-radius: 8px 0
+  &__name
+    margin-top: 16px
+  &__crew
+    margin-top: 4px
+    font-family: "Oxygen", sans-serif
+    font-size: 12px
+    color: #9A9A9A
+    &-member
+      font-size: 12px
+      color: #908BCE
+  &__characteristics
+    margin-top: 16px
+    display: flex
+    flex-wrap: wrap
+    gap: 8px
+    &-item
+      padding: 8px 10px
+      background: rgba(0, 0, 0, 0.1)
+      border-radius: 8px
+      font-size: 12px
+      display: flex
+      gap: 10px
+      justify-content: space-between
+      align-items: center
+      &.type
+        color: #254D9B
+        background: rgba(37, 77, 155, 0.1)

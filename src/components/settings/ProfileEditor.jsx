@@ -1,6 +1,6 @@
 import {useState} from "react"
 import {useDispatch, useSelector} from "react-redux"
-import {toggleEditor} from "../../redux/slices/profileSlice"
+import {toggleEditor} from "../../redux/slices/modal/profileSlice"
 // import {setDob, setEmail, setName, setPhone} from "../../redux/slices/userSlice"
 
 import Select from "react-select"
@@ -20,10 +20,7 @@ import del from "../../assets/icons/settings/modal-delete.svg"
 
 import {GENDERS, PROFESSIONS} from "../../data/menuSelectData"
 import {LANGUAGES} from "../../data/languages"
-import {set} from "../../redux/slices/userSlice"
-
-
-
+import {set} from "../../redux/slices/user/userSlice"
 
 
 const ProfileEditor = () => {
@@ -31,13 +28,16 @@ const ProfileEditor = () => {
     const user = useSelector(state => state.user)
     const dispatch = useDispatch()
     const [form, setForm] = useState({
-        firstName: user.firstName || "", lastName: user.lastName || "" , email: user.email || "",
+        firstName: user.firstName || "", lastName: user.lastName || "", email: user.email || "",
         phoneNumber: user.phoneNumber || "", dob: user.dob || "", gender: user.gender || "",
-        emergencyPhone: user.emergencyPhone || "", roles: user.roles || [], salary: user.salary || "",
-        governmentId: user.governmentId || "", license: user.license || "", languages: user.languages || []
+        emergencyContact: user.emergencyContact || "", roles: [], salary: user.salary || "",
+        governmentId: user.governmentId || "", license: user.license || "", languages: []
     })
     const formHandler = e => {
         setForm({...form, [e.target.name]: e.target.value})
+    }
+    const rolesHandler = value => {
+        setForm({...form, roles: value})
     }
     const languageHandler = value => {
         setForm({...form, languages: value})
@@ -51,9 +51,20 @@ const ProfileEditor = () => {
         window.location = "/"
     }
     const saveChanges = () => {
-        dispatch(set(form))
-        localStorage.setItem('user', JSON.stringify(form))
-        window.location.reload()
+        let copy = JSON.parse(JSON.stringify(form))
+        let roles = []
+        let languages = []
+        if (copy.roles.length > 0) {
+            copy.roles.map(role => roles.push(role.value))
+            copy.roles = roles
+        }
+        if (copy.languages.length > 0) {
+            copy.languages.map(language => languages.push(language.value))
+            copy.languages = languages
+        }
+        dispatch(set(copy))
+        localStorage.setItem('user', JSON.stringify(copy))
+        // window.location.reload()
     }
 
     return (
@@ -143,21 +154,15 @@ const ProfileEditor = () => {
                             label="Emergency Phone Number"
                             placeholder="+1 (000) 000-00-00"
                             name="emergencyPhone"
-                            data={form.emergencyPhone}
+                            data={form.emergencyContact}
                             setData={formHandler}
                             img={emergencyPhone}
                         />
                         <br/>
                         <div style={{width: "284px"}} className="profile__modal-field">
                             <label className="profile__modal-field-label">My Profession</label>
-                            <select onChange={formHandler} name="roles" className="profile__modal-select">
-                                <option value="default" disabled={true}>Choose Profession</option>
-                                {PROFESSIONS.map(profession =>
-                                    <option key={profession.value} value={profession.value}>
-                                        {profession.label}
-                                    </option>
-                                )}
-                            </select>
+                            <Select isMulti={true} placeholder="Choose Profession" options={PROFESSIONS}
+                                    value={form.roles} onChange={rolesHandler}/>
                         </div>
                         <ProfileDataField
                             style={{width: "284px"}}
@@ -193,7 +198,8 @@ const ProfileEditor = () => {
                         />
                         <div style={{width: "100%"}} className="profile__modal-field">
                             <label className="profile__modal-field-label">I speak</label>
-                            <Select isMulti={true} options={LANGUAGES} value={form.languages} onChange={languageHandler}/>
+                            <Select isMulti={true} placeholder="Select Languages" options={LANGUAGES}
+                                    value={form.languages} onChange={languageHandler}/>
                         </div>
                     </div>
                     <div className="profile__modal-footer">

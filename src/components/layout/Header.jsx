@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom"
 import {useDispatch, useSelector} from "react-redux"
-import {toggleAuthPopup} from "../../redux/slices/authPopupSlice"
+import {toggleAuthPopup} from "../../redux/slices/modal/authPopupSlice"
 import logo from '../../assets/icons/layout/logo.svg'
 import ThemeSwitcher from "../ui/ThemeSwitcher"
 import Button from "../ui/Button"

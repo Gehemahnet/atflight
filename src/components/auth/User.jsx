@@ -1,6 +1,6 @@
 
 import {useDispatch, useSelector} from "react-redux"
-import {toggleAuthPopup} from "../../redux/slices/authPopupSlice"
+import {toggleAuthPopup} from "../../redux/slices/modal/authPopupSlice"
 import "./user.sass"
 import Login from "./Login"
 import Verification from "./Verification"

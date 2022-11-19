@@ -3,7 +3,7 @@ const ProfileField = ({img, data, description}) => {
         <div className="profile__main-field">
             <div className="profile__main-field-data">
                 <img src={img} alt=""/>
-                <span>{data !== null ? data : "No data"}</span>
+                <span>{(data !== null && data !== "") ? data : "No data"}</span>
             </div>
             <div className="profile__main-field-description">
                 {description}

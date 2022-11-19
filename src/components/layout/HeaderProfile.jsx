@@ -10,6 +10,7 @@ const HeaderProfile = () => {
     const toggleUserPopup = () => {
         setUserPopup(!userPopup)
     }
+    const name = user.firstName + " " + user.lastName
     return (
         <div className="header__profile">
                 <img
@@ -18,8 +19,8 @@ const HeaderProfile = () => {
                     className={user.photo === null ? "header__profile-photo-placeholder" : "header__profile-photo"}
                 />
                 <span className="header__profile-name">
-                    {user.name !== null
-                        ? user.name
+                    {(user.firstName !== "" || user.lastName !== "")
+                        ? name
                         : user.email || user.phone
                     }
                 </span>

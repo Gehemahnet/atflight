@@ -29,7 +29,7 @@ const HeaderProfileMenu = ({toggleUserPopup}) => {
                         <img src={Aircraft} alt=""/>
                         <span>My aircrafts</span>
                     </Link>
-                    <Link to="settings/payments" className="header__profile-popup-link">
+                    <Link to="settings/paymentsMock" className="header__profile-popup-link">
                         <img src={Payments} alt=""/>
                         <span>Payments & Payouts</span>
                     </Link>

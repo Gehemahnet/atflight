@@ -1,0 +1,99 @@
+.settings
+  padding-top: 40px
+  overflow: auto
+  & .wrapper
+    display: flex
+    gap: 32px
+  &__aside
+    width: 320px
+    &-block
+      margin-top: 30px
+      &-button
+        margin-top: 20px
+        width: 100%
+        padding: 24px 20px
+        border: 1px solid #E0E0E0
+        border-radius: 8px
+        display: flex
+        align-items: center
+        gap: 20px
+        &.active
+          position: relative
+          box-shadow: 0 16px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04)
+          &:after
+            position: absolute
+            top: 13px
+            right: 0
+            content: ""
+            background: black
+            width: 4px
+            height: 48px
+            border-radius: 8px 0 0 8px
+      &-payments
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        margin-top: 20px
+        border: 1px solid rgba(224, 224, 224, 0.5)
+        border-radius: 8px
+      &-cards
+        padding: 20px
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        width: 100%
+        gap: 30px
+      &-card
+        display: flex
+        justify-content: space-between
+        width: 100%
+        >span
+          display: flex
+          align-items: center
+          gap: 4px
+          &:first-child
+            gap: 16px
+      &-history
+        width: 100%
+        padding: 20px
+        display: flex
+        gap: 16px
+        border-top: 1px solid rgba(224, 224, 224, 0.5)
+        border-bottom: 1px solid rgba(224, 224, 224, 0.5)
+      &-other
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        padding: 20px
+        gap: 36px
+        width: 100%
+      &-help
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        gap: 30px
+        margin-top: 20px
+        border: 1px solid rgba(224, 224, 224, 0.5)
+        border-radius: 8px
+        padding: 20px
+    &-payments-button,
+    &-help-button
+      display: flex
+      gap: 16px
+      width: 100%
+
+//Dark mode
+body.dark
+  & .settings
+    &__aside
+      &-block
+        &-button
+          border: 1px solid rgba(224, 224, 224, 0.1)
+          &.active
+            &:after
+              background: #9A9A9A
+        &-help,
+        &-payments
+          border: 1px solid rgba(224, 224, 224, 0.1)
+        &-history
+          border-color: rgba(224, 224, 224, 0.1)

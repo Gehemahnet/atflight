@@ -1,10 +1,50 @@
 @import "../app/variables.sass"
 .profile
-  width: 320px
+  width: 100%
   border: 1px solid rgba(224, 224, 224, 0.5)
   border-radius: 8px
   &__header
+    display: flex
+    justify-content: space-between
+    gap: 20px
+    align-items: center
     padding: 20px
+    &-photo
+      min-width: 72px
+      min-height: 72px
+      display: flex
+      position: relative
+      &-loaded
+        width: 100%
+        height: 100%
+      &-avatar
+        background: rgba(224, 224, 224, 0.5)
+        border: 1px solid rgba(154, 154, 154, 0.25)
+        border-radius: 50%
+        padding: 24px
+      &-edit
+        width: 24px
+        height: 24px
+        background: url("../../assets/icons/settings/avatar-edit.svg")
+          repeat: no-repeat
+        position: absolute
+        right: 0
+        bottom: 0
+    &-info
+      display: flex
+      flex-direction: column
+      gap: 4px
+    &-name
+      font-weight: 700
+      font-size: 20px
+      line-height: 24px
+    &-id
+      color: #33669A
+      line-height: 24px
+    &-roles
+      color: #9A9A9A
+      font-size: 12px
+      line-height: 16px
   &__main
     padding: 20px 0
     background: rgba(224, 224, 224, 0.2)
@@ -155,3 +195,24 @@
         padding: 16px 24px
         &:disabled
           background: #E0E0E0
+//Dark Mode
+body.dark
+  .profile
+    border: 1px solid rgba(224, 224, 224, 0.1)
+    &__header
+      &-photo
+        &-avatar
+          background: rgba(224, 224, 224, 0.05)
+        &-edit
+          background: url("../../assets/icons/settings/avatar-edit-dark.svg")
+            repeat: no-repeat
+      &-id
+        color: #33669A
+      &-roles
+        color: #9A9A9A
+    &__main
+      background: rgba(224, 224, 224, 0.05)
+    &__footer
+      >button
+        &:last-child
+          background: #FFFFFF
