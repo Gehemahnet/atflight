@@ -43,6 +43,7 @@ const MenuSearchCrew = () => {
                         options={PROFESSIONS}
                         value={profession}
                         setValue={setProfession}
+                        isMulti={true}
                     />
                     <div className="menu__types-select" onClick={toggleTypes}>
                         {types.length <= 0 ? "Vehicle Types" : types.map(type => <span key={type}>{type}</span>)}

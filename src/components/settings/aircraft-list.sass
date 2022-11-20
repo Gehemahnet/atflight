@@ -3,6 +3,7 @@
   &__header
     display: flex
     justify-content: space-between
+    align-items: center
     &-button
       display: flex
       justify-content: space-between
@@ -19,3 +20,11 @@
     gap: 30px
     flex-wrap: wrap
 
+//Dark mode
+body.dark
+  .aircraft-list
+    &__header
+      &-button
+        color: #3E7EBD
+        background: none
+        border: 1px solid rgba(62, 126, 189, 0.2)

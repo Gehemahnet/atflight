@@ -73,6 +73,10 @@ input {
   margin: 0 auto;
 }
 
+.hidden {
+  display: none;
+}
+
 .popup {
   position: fixed;
   top: 0;

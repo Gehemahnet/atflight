@@ -141,7 +141,7 @@
   width: 112px;
   height: 112px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .profile__modal-upload-button {
@@ -254,6 +254,42 @@ body.dark .profile__main {
 }
 body.dark .profile__footer > button:last-child {
   background: #FFFFFF;
+}
+body.dark .profile__modal {
+  background: #21242C;
+}
+body.dark .profile__modal-main-block, body.dark .profile__modal-main-block_divided {
+  border-color: rgba(224, 224, 224, 0.1);
+}
+body.dark .profile__modal-upload-button {
+  color: #2F80ED;
+}
+body.dark .profile__modal-close {
+  background-image: url("../../assets/icons/user/close-dark.svg");
+}
+body.dark .profile__modal-select {
+  background: none;
+  background-image: url("../../assets/icons/settings/modal-dropdown-dark.svg");
+  background-repeat: no-repeat;
+  background-position: right 24px center;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #9A9A9A;
+}
+body.dark .profile__modal-select option {
+  color: black;
+}
+body.dark .profile__modal-notification {
+  color: #9A9A9A;
+}
+body.dark .profile__modal-field-input {
+  background: #2D323D;
+}
+body.dark .profile__modal-footer-button {
+  color: #EB5757;
+}
+body.dark .profile .select__control {
+  background: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 
 /*# sourceMappingURL=profile.css.map */

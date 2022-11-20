@@ -34,4 +34,8 @@
   transform: translateX(27px);
 }
 
+body.dark .switcher-button:before {
+  background: #21242C;
+}
+
 /*# sourceMappingURL=switcher.css.map */

@@ -11,7 +11,7 @@
 .menu__passengers-modal {
   position: absolute;
   top: 72px;
-  left: 28px;
+  right: -164px;
   z-index: 2;
   background: #FFFFFF;
   padding: 30px;
@@ -82,6 +82,9 @@
 
 body.dark .menu__passengers {
   background: #2D323D;
+  background-image: url("../../../assets/icons/home/passengers-dark.svg");
+  background-repeat: no-repeat;
+  background-position: top 20px right 18px;
 }
 
 /*# sourceMappingURL=menu-passengers.css.map */

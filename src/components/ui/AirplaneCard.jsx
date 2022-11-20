@@ -3,6 +3,10 @@ import paperPlane from "../../assets/icons/settings/aircraft-list-card-paper-pla
 import seat from "../../assets/icons/settings/aircraft-list-card-seat.svg"
 import speed from "../../assets/icons/settings/aircraft-list-card-speed.svg"
 import range from "../../assets/icons/settings/aircraft-list-card-range.svg"
+import paperPlaneDark from "../../assets/icons/settings/aircraft-list-card-paper-plane-dark.svg"
+import seatDark from "../../assets/icons/settings/aircraft-list-card-seat-dark.svg"
+import speedDark from "../../assets/icons/settings/aircraft-list-card-speed-dark.svg"
+import rangeDark from "../../assets/icons/settings/aircraft-list-card-range-dark.svg"
 
 const AirplaneCard = ({item}) => {
     const crew = item.crew.join(", ")
@@ -24,11 +28,23 @@ const AirplaneCard = ({item}) => {
             }
 
             <div className="airplane-card__characteristics">
-                <span className="airplane-card__characteristics-item type"><img src={paperPlane} alt=""/>{item.type}</span>
-                <span className="airplane-card__characteristics-item"><img src={seat} alt=""/>x{item.seats}</span>
-                <span className="airplane-card__characteristics-item">{item.built} Year</span>
-                <span className="airplane-card__characteristics-item"><img src={speed} alt=""/>{item.speed} km/h</span>
-                <span className="airplane-card__characteristics-item"><img src={range} alt=""/>{item.range} km</span>
+                <span className="airplane-card__characteristics-item type">
+                    <img src={document.body.classList.contains("dark") ? paperPlaneDark : paperPlane}
+                         alt=""/>{item.type}
+                </span>
+                <span className="airplane-card__characteristics-item">
+                    <img src={document.body.classList.contains("dark") ? seatDark : seat} alt=""/>x{item.seats}
+                </span>
+                <span className="airplane-card__characteristics-item">{item.built} Year
+                </span>
+                <span className="airplane-card__characteristics-item">
+                    <img src={document.body.classList.contains("dark") ? speedDark : speed}
+                         alt=""/>{item.speed} km/h
+                </span>
+                <span className="airplane-card__characteristics-item">
+                    <img src={document.body.classList.contains("dark") ? rangeDark : range}
+                         alt=""/>{item.range} km
+                </span>
             </div>
         </div>
     )

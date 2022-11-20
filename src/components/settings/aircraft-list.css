@@ -4,6 +4,7 @@
 .aircraft-list__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .aircraft-list__header-button {
   display: flex;
@@ -21,6 +22,12 @@
   justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
+}
+
+body.dark .aircraft-list__header-button {
+  color: #3E7EBD;
+  background: none;
+  border: 1px solid rgba(62, 126, 189, 0.2);
 }
 
 /*# sourceMappingURL=aircraft-list.css.map */

@@ -6,7 +6,7 @@ import aircraftsDark from "../../assets/icons/settings/aircrafts-dark.svg"
 const AsideTabs = ({state,handler}) => {
     return (
         <>
-            <div className="setting__aside-block">
+            <div className="settings__aside-block">
                 <h4 className="settings__aside-block-title">
                     My Orders
                 </h4>
@@ -14,6 +14,7 @@ const AsideTabs = ({state,handler}) => {
                     name="orders"
                     className={state === "orders"? "settings__aside-block-button active" :"settings__aside-block-button"}
                     onClick={handler}
+                    type="button"
                 >
                     <img src={document.body.classList.contains("dark")? ordersDark : orders} alt=""/>
                     Order History
@@ -27,6 +28,7 @@ const AsideTabs = ({state,handler}) => {
                     name="aircrafts"
                     className={state === "aircrafts"? "settings__aside-block-button active" :"settings__aside-block-button"}
                     onClick={handler}
+                    type="button"
                 >
                     <img src={document.body.classList.contains("dark")? aircraftsDark : aircrafts} alt=""/>
                     Aircrafts List

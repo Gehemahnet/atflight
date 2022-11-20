@@ -1,8 +1,9 @@
 import {useDispatch, useSelector} from "react-redux"
+import {toggleEditor} from "../../redux/slices/modal/profileSlice"
 import Button from "../ui/Button"
 import "./profile.sass"
-import profile from "../../assets/icons/settings/modal-profile-placeholder.svg"
 
+import profile from "../../assets/icons/settings/modal-profile-placeholder.svg"
 import email from "../../assets/icons/settings/email.svg"
 import phone from "../../assets/icons/settings/phone.svg"
 import emergencyContact from "../../assets/icons/settings/emergency-contact.svg"
@@ -10,8 +11,8 @@ import governmentId from "../../assets/icons/settings/government-id.svg"
 import licenseNumber from "../../assets/icons/settings/license.svg"
 import salary from "../../assets/icons/settings/salary.svg"
 import exit from "../../assets/icons/layout/logout.svg"
+
 import ProfileField from "./ProfileField"
-import {toggleEditor} from "../../redux/slices/modal/profileSlice"
 import ProfileEditor from "./ProfileEditor"
 
 const Profile = () => {

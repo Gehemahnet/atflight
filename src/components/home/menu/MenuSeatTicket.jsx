@@ -1,11 +1,11 @@
 import {useState} from "react"
 import MenuDestination from "./MenuDestination"
-import {TYPES} from "../../../data/types"
 import MenuFooter from "./MenuFooter"
 import MenuMultiTrip from "./MenuMultiTrip"
 import MenuSlider from "./MenuSlider"
 import Switcher from "../../ui/Switcher"
 import MenuDatePicker from "./MenuDatePicker"
+import MenuPassengers from "./MenuPassengers";
 
 
 const MenuSeatTicket = () => {
@@ -14,7 +14,7 @@ const MenuSeatTicket = () => {
     const [additionalLocations, setAdditionalLocations] = useState([""])
 
     const [date, setDate] = useState([new Date(), new Date()])
-    const [type, setType] = useState("default")
+    const [passengers, setPassengers] = useState([0,0,0,0])
     const [trip, setTrip] = useState("default")
 
     const [priceRange, setPriceRange] = useState([300, 500])
@@ -41,10 +41,10 @@ const MenuSeatTicket = () => {
                     <option value="round">Round Way</option>
                     <option value="multi">Multitrip</option>
                 </select>
-                <select className="menu__select" onChange={e => setType(e.target.value)} value={type}>
-                    <option value="default" disabled hidden>Plane Type</option>
-                    {TYPES.map((type, index) => <option key={index} value={type.name}>{type.name}</option>)}
-                </select>
+                <MenuPassengers
+                    passengers={passengers}
+                    setPassengers={setPassengers}
+                />
             </div>
             {trip === "multi" &&
                 <MenuMultiTrip

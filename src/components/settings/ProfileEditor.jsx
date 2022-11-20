@@ -1,14 +1,13 @@
 import {useState} from "react"
 import {useDispatch, useSelector} from "react-redux"
 import {toggleEditor} from "../../redux/slices/modal/profileSlice"
-// import {setDob, setEmail, setName, setPhone} from "../../redux/slices/userSlice"
 
 import Select from "react-select"
 import ProfileDataField from "./ProfileDataField"
 import Button from "../ui/Button"
 
-import person from "../../assets/icons/settings/modal-person.svg"
 import profilePlaceholder from "../../assets/icons/settings/modal-profile-placeholder.svg"
+import person from "../../assets/icons/settings/modal-person.svg"
 import email from "../../assets/icons/settings/modal-email.svg"
 import phone from "../../assets/icons/settings/modal-phone.svg"
 import calendar from "../../assets/icons/settings/modal-calendar.svg"
@@ -17,6 +16,16 @@ import salary from "../../assets/icons/settings/modal-salary.svg"
 import government from "../../assets/icons/settings/modal-government-id.svg"
 import license from "../../assets/icons/settings/modal-license.svg"
 import del from "../../assets/icons/settings/modal-delete.svg"
+
+import personDark from "../../assets/icons/settings/modal-person-dark.svg"
+import emailDark from "../../assets/icons/settings/modal-email-dark.svg"
+import phoneDark from "../../assets/icons/settings/modal-phone-dark.svg"
+import calendarDark from "../../assets/icons/settings/modal-calendar-dark.svg"
+import emergencyPhoneDark from "../../assets/icons/settings/modal-emergency-phone-dark.svg"
+import salaryDark from "../../assets/icons/settings/modal-salary-dark.svg"
+import governmentDark from "../../assets/icons/settings/modal-government-id-dark.svg"
+import licenseDark from "../../assets/icons/settings/modal-license-dark.svg"
+
 
 import {GENDERS, PROFESSIONS} from "../../data/menuSelectData"
 import {LANGUAGES} from "../../data/languages"
@@ -87,7 +96,7 @@ const ProfileEditor = () => {
                                 name="firstName"
                                 data={form.firstName}
                                 setData={formHandler}
-                                img={person}
+                                img={document.body.classList.contains("dark") ? personDark : person}
                             />
                             <ProfileDataField
                                 label="Last Name"
@@ -95,7 +104,7 @@ const ProfileEditor = () => {
                                 name="lastName"
                                 data={form.lastName}
                                 setData={formHandler}
-                                img={person}
+                                img={document.body.classList.contains("dark") ? personDark : person}
                             />
                         </div>
                         <div style={{justifyContent: "center", marginTop: "24px"}}
@@ -117,7 +126,7 @@ const ProfileEditor = () => {
                             name="email"
                             data={form.email}
                             setData={formHandler}
-                            img={email}
+                            img={document.body.classList.contains("dark") ? emailDark : email}
                         />
                         <ProfileDataField
                             style={{width: "284px"}}
@@ -126,7 +135,7 @@ const ProfileEditor = () => {
                             name="phoneNumber"
                             data={form.phoneNumber}
                             setData={formHandler}
-                            img={phone}
+                            img={document.body.classList.contains("dark") ? phoneDark : phone}
                         />
                         <ProfileDataField
                             style={{width: "284px"}}
@@ -136,7 +145,7 @@ const ProfileEditor = () => {
                             type="date"
                             data={form.dob}
                             setData={formHandler}
-                            img={calendar}
+                            img={document.body.classList.contains("dark") ? calendarDark : calendar}
                         />
                         <div style={{width: "284px"}} className="profile__modal-field">
                             <label className="profile__modal-field-label">Gender</label>
@@ -153,16 +162,23 @@ const ProfileEditor = () => {
                             style={{width: "284px"}}
                             label="Emergency Phone Number"
                             placeholder="+1 (000) 000-00-00"
-                            name="emergencyPhone"
+                            name="emergencyContact"
                             data={form.emergencyContact}
                             setData={formHandler}
-                            img={emergencyPhone}
+                            img={document.body.classList.contains("dark") ? emergencyPhoneDark : emergencyPhone}
                         />
                         <br/>
                         <div style={{width: "284px"}} className="profile__modal-field">
                             <label className="profile__modal-field-label">My Profession</label>
-                            <Select isMulti={true} placeholder="Choose Profession" options={PROFESSIONS}
-                                    value={form.roles} onChange={rolesHandler}/>
+                            <Select
+                                isMulti={true}
+                                placeholder="Choose Profession"
+                                options={PROFESSIONS}
+                                value={form.roles}
+                                onChange={rolesHandler}
+                                className="select"
+                                classNamePrefix="select"
+                            />
                         </div>
                         <ProfileDataField
                             style={{width: "284px"}}
@@ -171,7 +187,7 @@ const ProfileEditor = () => {
                             name="salary"
                             data={form.salary}
                             setData={formHandler}
-                            img={salary}
+                            img={document.body.classList.contains("dark") ? salaryDark : salary}
                         />
                         <br/>
                         <span className="profile__modal-notification">
@@ -185,7 +201,7 @@ const ProfileEditor = () => {
                             name="governmentId"
                             data={form.governmentId}
                             setData={formHandler}
-                            img={government}
+                            img={document.body.classList.contains("dark") ? governmentDark : government}
                         />
                         <ProfileDataField
                             style={{width: "284px"}}
@@ -194,12 +210,19 @@ const ProfileEditor = () => {
                             name="license"
                             data={form.license}
                             setData={formHandler}
-                            img={license}
+                            img={document.body.classList.contains("dark") ? licenseDark : license}
                         />
                         <div style={{width: "100%"}} className="profile__modal-field">
                             <label className="profile__modal-field-label">I speak</label>
-                            <Select isMulti={true} placeholder="Select Languages" options={LANGUAGES}
-                                    value={form.languages} onChange={languageHandler}/>
+                            <Select
+                                isMulti={true}
+                                placeholder="Select Languages"
+                                options={LANGUAGES}
+                                value={form.languages}
+                                onChange={languageHandler}
+                                className="select"
+                                classNamePrefix="select"
+                            />
                         </div>
                     </div>
                     <div className="profile__modal-footer">

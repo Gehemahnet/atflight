@@ -20,7 +20,9 @@
   bottom: 0;
   width: 70px;
   height: 28px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(180deg, #4551A8 0%, #3E88C5 100%);
   color: white;
   border-top: 1px solid #fff;
@@ -38,6 +40,7 @@
 }
 .airplane-card__crew-member {
   font-size: 12px;
+  font-weight: 500;
   color: #908BCE;
 }
 .airplane-card__characteristics {
@@ -51,6 +54,7 @@
   background: rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   font-size: 12px;
+  font-weight: 500;
   display: flex;
   gap: 10px;
   justify-content: space-between;
@@ -59,6 +63,32 @@
 .airplane-card__characteristics-item.type {
   color: #254D9B;
   background: rgba(37, 77, 155, 0.1);
+}
+
+body.dark .airplane-card {
+  border: 1px solid rgba(224, 224, 224, 0.1);
+}
+body.dark .airplane-card__price {
+  border-color: rgb(45, 50, 61);
+  background: radial-gradient(88.33% 576.94% at 100% 80%, #8F8AD2 0%, #4267B2 100%);
+}
+body.dark .airplane-card__crew {
+  color: #9A9A9A;
+}
+body.dark .airplane-card__crew-member {
+  color: #908BCE;
+}
+body.dark .airplane-card-member {
+  font-size: 12px;
+  color: #908BCE;
+}
+body.dark .airplane-card__characteristics-item {
+  background: none;
+  border: 1px solid rgba(154, 154, 154, 0.2);
+  color: #9A9A9A;
+}
+body.dark .airplane-card__characteristics-item.type {
+  color: #908BCE;
 }
 
 /*# sourceMappingURL=airplane-card.css.map */

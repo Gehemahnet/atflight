@@ -119,7 +119,7 @@
       width: 112px
       height: 112px
       display: flex
-      justify-content: space-between
+      justify-content: center
       align-items: center
     &-upload-button
       color: #2F80ED
@@ -216,3 +216,31 @@ body.dark
       >button
         &:last-child
           background: #FFFFFF
+    &__modal
+      background: #21242C
+      &-main-block,
+      &-main-block_divided
+        border-color: rgba(224, 224, 224, 0.1)
+      &-upload-button
+        color: #2F80ED
+      &-close
+        background-image: url("../../assets/icons/user/close-dark.svg")
+      &-select
+        background: none
+          image: url("../../assets/icons/settings/modal-dropdown-dark.svg")
+          repeat: no-repeat
+          position: right 24px center
+        border-color: rgba(255, 255, 255, 0.2)
+        color: #9A9A9A
+        option
+          color: black
+      &-notification
+        color: #9A9A9A
+      &-field
+        &-input
+          background: #2D323D
+      &-footer-button
+        color: #EB5757
+    .select__control
+      background: none !important
+      border: 1px solid rgba(255, 255, 255, 0.2) !important
